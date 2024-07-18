@@ -37,4 +37,4 @@ def main():
         st.write(f"Predicted Price: {prediction}")
 
 if __name__ == "__main__":
-    main()
+main()
