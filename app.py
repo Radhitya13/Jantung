@@ -13,7 +13,7 @@ y = df["Price"]  # Ganti dengan nama kolom yang sesuai di dataset
 lr = LinearRegression()
 lr.fit(X, y)
 
-def predict_price(Year, kms Driven, Fuel Type, Suspension, Car Model):
+def predict_price(year, kms_driven, fuel_type, suspension, car_model):
     input_data = np.array([[Year, kms Driven, Fuel Type, Suspension, Car Modell]])
     prediction = lr.predict(input_data)
     return prediction[0]
