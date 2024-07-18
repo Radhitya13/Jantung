@@ -6,8 +6,11 @@ from sklearn.linear_model import LinearRegression
 # Load the cleaned dataset
 df = pd.read_csv("honda_car_selling.csv")
 
-# Load your trained model (assuming lr is your trained LinearRegression model)
-# You should include the model training code here if you want to deploy with a pre-trained model.
+# Train the LinearRegression model
+X = df[["Year", "kms_Driven", "Fuel_Type", "Suspension", "Car_Model"]]
+y = df["Selling_Price"]
+lr = LinearRegression()
+lr.fit(X, y)
 
 # Function to predict price
 def predict_price(Year, kms_Driven, Fuel_Type, Suspension, Car_Model):
@@ -34,7 +37,7 @@ def main():
     # When the user clicks the predict button
     if st.sidebar.button("Predict"):
         prediction = predict_price(Year, kms_Driven, Fuel_Type, Suspension, Car_Model)
-        st.write(f"Predicted Price: {prediction}")
+        st.write(f"Predicted Price: {prediction[0]:.2f}")
 
 if __name__ == "__main__":
     main()
