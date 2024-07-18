@@ -40,4 +40,4 @@ if st.sidebar.button("Predict"):
 return predicted_price
     
 if __name__ == "__main__":
-    main()
+    car_price_predictor()
