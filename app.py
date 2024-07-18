@@ -37,7 +37,7 @@ if st.sidebar.button("Predict"):
     prediction = predict_price(Year, kms_Driven, Fuel_Type, Suspension, Car_Model)
     st.write(f"Predicted Price: {prediction[0]:.2f}")
 
-return prediction
+return predicted_price
     
 if __name__ == "__main__":
     main()
