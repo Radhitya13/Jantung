@@ -23,8 +23,8 @@ prediction = lr.predict(input_data)
 return prediction
 
 def main():
-st.title("Car Price Predictor")
-st.sidebar.title("Input Parameters")
+ st.title("Car Price Predictor")
+ st.write("Masukkan detail mobil Anda untuk memprediksi harga.")
 
 Year = st.sidebar.slider("Year", min_value=1990, max_value=2023, step=1)
 kms_Driven = st.sidebar.slider("Kilometers Driven", min_value=0, max_value=200000, step=1000)
