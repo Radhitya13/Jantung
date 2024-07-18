@@ -16,7 +16,9 @@ categorical_cols = ["Fuel Type", "Suspension", "Car Model"]
 preprocessor = ColumnTransformer(
     transformers=[
         ('cat', OneHotEncoder(), categorical_cols),
-    ], remainder='passthrough')
+    ],
+    remainder='passthrough'
+)
 
 X = preprocessor.fit_transform(X)
 
