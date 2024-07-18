@@ -14,7 +14,7 @@ lr = LinearRegression()
 lr.fit(X, y)
 
 def predict_price(year, kms_driven, fuel_type, suspension, car_model):
-    input_data = np.array([[Year, kms Driven, Fuel Type, Suspension, Car Modell]])
+    input_data = np.array([[year, kms_driven, fuel_type, suspension, car_model]])
     prediction = lr.predict(input_data)
     return prediction[0]
 
