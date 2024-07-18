@@ -13,8 +13,8 @@ y = df["Price"]  # Ganti dengan nama kolom yang sesuai di dataset
 lr = LinearRegression()
 lr.fit(X, y)
 
-def predict_price(year, kms_driven, fuel_type, suspension, car_model):
-    input_data = np.array([[year, kms_driven, fuel_type, suspension, car_model]])
+def predict_price(Year, kms Driven, Fuel Type, Suspension, Car Model):
+    input_data = np.array([[Year, kms Driven, Fuel Type, Suspension, Car Model]])
     prediction = lr.predict(input_data)
     return prediction[0]
 
@@ -29,7 +29,7 @@ def main():
     car_model = st.sidebar.selectbox("Car Model", df["Car Model"].unique())
 
     if st.sidebar.button("Predict"):
-        prediction = predict_price(year, kms_driven, fuel_type, suspension, car_model)
+        prediction = predict_price(Year, kms Driven, Fuel Type, Suspension, Car Model)
         st.write(f"Predicted Price: {prediction:.2f}")
 
 if __name__ == "__main__":
