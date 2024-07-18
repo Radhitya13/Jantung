@@ -13,9 +13,6 @@ lr.fit(X, y)
 
 def predict_price(Year, kms_Driven, Fuel_Type, Suspension, Car_Model):
 
-
-
-
 input_data = np.array([[Year, kms_Driven, Fuel_Type, Suspension, Car_Model]])
 prediction = lr.predict(input_data)
 return prediction
@@ -33,6 +30,7 @@ Car_Model = st.sidebar.selectbox("Car Model", df["Car Model"].unique())
 
 if st.sidebar.button("Predict"):
     prediction = predict_price(Year, kms_Driven, Fuel_Type, Suspension, Car_Model)
-    st.write(f"Predicted Price: {prediction}")
+    st.write(f"Predicted Price: {prediction[0]:.2f}")
+    
 if __name__ == "__main__":
     main()
