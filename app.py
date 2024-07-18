@@ -25,11 +25,11 @@ def main():
     st.sidebar.title("Input Parameters")
 
     # Define inputs using Streamlit components
-    year = st.sidebar.slider("Year", min_value=1990, max_value=2023, step=1)
-    kms_driven = st.sidebar.slider("Kilometers Driven", min_value=0, max_value=200000, step=1000)
-    fuel_type = st.sidebar.selectbox("Fuel Type", df["Fuel Type"].unique())
-    suspension = st.sidebar.selectbox("Suspension", df["Suspension"].unique())
-    car_model = st.sidebar.selectbox("Car Model", df["Car Model"].unique())
+    Year = st.sidebar.slider("Year", min_value=1990, max_value=2023, step=1)
+    kms_Driven = st.sidebar.slider("Kilometers Driven", min_value=0, max_value=200000, step=1000)
+    Fuel_Type = st.sidebar.selectbox("Fuel Type", df["Fuel Type"].unique())
+    Suspension = st.sidebar.selectbox("Suspension", df["Suspension"].unique())
+    Car_Model = st.sidebar.selectbox("Car Model", df["Car Model"].unique())
 
     # When the user clicks the predict button
     if st.sidebar.button("Predict"):
