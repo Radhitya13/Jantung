@@ -29,7 +29,7 @@ def main():
     car_model = st.sidebar.selectbox("Car Model", df["Car Model"].unique())
 
     if st.sidebar.button("Predict"):
-        prediction = predict_price(Year, kms Driven, Fuel Type, Suspension, Car Model)
+        prediction = predict_price(year, kms_driven, fuel_type, suspension, car_model)
         st.write(f"Predicted Price: {prediction:.2f}")
 
 if __name__ == "__main__":
