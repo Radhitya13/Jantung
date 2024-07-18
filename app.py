@@ -6,16 +6,16 @@ from sklearn.linear_model import LinearRegression
 
 df = pd.read_csv("honda_car_selling.csv")
 
-X = df[["Year", "kms_Driven", "Fuel_Type", "Suspension", "Car_Model"]]
+X = df[["Year", "kms Driven", "Fuel Type", "Suspension", "Car Model"]] 
 y = df["Selling_Price"]
+
 lr = LinearRegression()
 lr.fit(X, y)
 
 def predict_price(year, kms_driven, fuel_type, suspension, car_model):
-
-input_data = np.array([[year, kms_driven, fuel_type, suspension, car_model]])
-prediction = lr.predict(input_data)
-return prediction
+    input_data = np.array([[year, kms_driven, fuel_type, suspension, car_model]])
+    prediction = lr.predict(input_data)
+    return prediction[0]
 
 def main():
  st.title("Car Price Predictor")
