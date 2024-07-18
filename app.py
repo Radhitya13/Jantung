@@ -20,7 +20,7 @@ def predict_price():
 
 input_data = np.array([[Year, kms_Driven, Fuel_Type, Suspension, Car_Model]])
 prediction = lr.predict(input_data)
-
+return prediction
 
 def main():
  st.title("Car Price Predictor")
