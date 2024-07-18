@@ -10,7 +10,7 @@ df = pd.read_csv("honda_car_selling.csv")
 # You should include the model training code here if you want to deploy with a pre-trained model.
 
 # Function to predict price
-def predict_price(year, kms_driven, fuel_type, suspension, car_model):
+def predict_price(Year, kms_Driven, Fuel_Type, Suspension, Car_Model):
     # Perform any necessary preprocessing here (like converting categorical variables to dummy variables)
     # Assuming you have done preprocessing before model deployment
 
