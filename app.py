@@ -33,8 +33,8 @@ def main():
 
     # When the user clicks the predict button
     if st.sidebar.button("Predict"):
-    prediction = predict_price(Year, kms_Driven, Fuel_Type, Suspension, Car_Model)
-    st.write(f"Predicted Price: {prediction}")
+        prediction = predict_price(Year, kms_Driven, Fuel_Type, Suspension, Car_Model)
+        st.write(f"Predicted Price: {prediction}")
 
 if __name__ == "__main__":
     main()
