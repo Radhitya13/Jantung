@@ -15,7 +15,7 @@ def predict_price(Year, kms_Driven, Fuel_Type, Suspension, Car_Model):
     # Assuming you have done preprocessing before model deployment
 
     # Example of using the model for prediction
-    input_data = np.array([[Year, kms_Driven, Fuel_Type, Suspension, Car_Model)]])
+    input_data = np.array([[Year, kms_Driven, Fuel_Type, Suspension, Car_Model]])
     prediction = lr.predict(input_data)
     return prediction
 
