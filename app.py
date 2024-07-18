@@ -10,12 +10,12 @@ df = pd.read_csv("honda_car_selling.csv")
 # You should include the model training code here if you want to deploy with a pre-trained model.
 
 # Function to predict price
-def predict_price(Year, kms Driven, Fuel Type, Suspension, Car Model):
+def predict_price(Year, kms_Driven, Fuel_Type, Suspension, Car_Model):
     # Perform any necessary preprocessing here (like converting categorical variables to dummy variables)
     # Assuming you have done preprocessing before model deployment
 
     # Example of using the model for prediction
-    input_data = np.array([[Year, kms Driven, Fuel Type, Suspension, Car Model]])
+    input_data = np.array([[Year, kms_Driven, Fuel_Type, Suspension, Car_Model]])
     prediction = lr.predict(input_data)
     return prediction
 
@@ -33,7 +33,7 @@ def main():
 
     # When the user clicks the predict button
     if st.sidebar.button("Predict"):
-        prediction = predict_price(Year, kms Driven, Fuel Type, Suspension, Car Model)
+        prediction = predict_price(Year, kms_Driven, Fuel_Type, Suspension, Car_Model)
         st.write(f"Predicted Price: {prediction}")
 
 if __name__ == "__main__":
