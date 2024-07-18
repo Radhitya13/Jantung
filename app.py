@@ -4,7 +4,7 @@ import numpy as np
 from sklearn.linear_model import LinearRegression
 
 # Load the cleaned dataset
-df = pd.read_csv("Cleaned_Car_Data.csv")
+df = pd.read_csv("honda_car_selling.csv")
 
 # Load your trained model (assuming lr is your trained LinearRegression model)
 # You should include the model training code here if you want to deploy with a pre-trained model.
