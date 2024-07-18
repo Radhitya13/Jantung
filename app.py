@@ -15,7 +15,7 @@ def predict_price(Year, kms_Driven, Fuel_Type, Suspension, Car_Model):
     # Assuming you have done preprocessing before model deployment
 
     # Example of using the model for prediction
-    input_data = np.array([[year, kms_driven, fuel_type, suspension, car_model]])
+    input_data = np.array([[Year, kms_Driven, Fuel_Type, Suspension, Car_Model]])
     prediction = lr.predict(input_data)
     return prediction
 
@@ -33,7 +33,7 @@ def main():
 
     # When the user clicks the predict button
     if st.sidebar.button("Predict"):
-        prediction = predict_price(year, kms_driven, fuel_type, suspension, car_model)
+        prediction = predict_price(Year, kms_Driven, Fuel_Type, Suspension, Car_Model)
         st.write(f"Predicted Price: {prediction}")
 
 if __name__ == "__main__":
