@@ -11,12 +11,7 @@ y = df["Selling_Price"]
 lr = LinearRegression()
 lr.fit(X, y)
 
-def predict_price():
-    Year = 2020
-    kms_Driven = 15000
-    Fuel_Type = 'Petrol'
-    Suspension = 'Standard'
-    Car_Model = 'Sedan'
+def predict_price(Year, kms_Driven, Fuel_Type, Suspension, Car_Model):
 
 input_data = np.array([[Year, kms_Driven, Fuel_Type, Suspension, Car_Model]])
 prediction = lr.predict(input_data)
