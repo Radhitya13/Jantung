@@ -2,6 +2,8 @@ import streamlit as st
 import pandas as pd
 import numpy as np
 from sklearn.linear_model import LinearRegression
+from sklearn.preprocessing import OneHotEncoder
+from sklearn.compose import ColumnTransformer
 
 # Ganti path file sesuai dengan lokasi dataset Anda
 df = pd.read_csv("honda_car_selling.csv")
@@ -10,11 +12,20 @@ df = pd.read_csv("honda_car_selling.csv")
 X = df[["Year", "kms Driven", "Fuel Type", "Suspension", "Car Model"]]
 y = df["Price"]  # Ganti dengan nama kolom yang sesuai di dataset
 
+# Memproses kolom kategorikal dengan One-Hot Encoding
+categorical_cols = ["Fuel Type", "Suspension", "Car Model"]
+preprocessor = ColumnTransformer(
+    transformers=[
+        ('cat', OneHotEncoder(), categorical_cols),
+    ], remainder='passthrough')
+
+X = preprocessor.fit_transform(X)
+
 lr = LinearRegression()
 lr.fit(X, y)
 
-def predict_price(Year, kms Driven, Fuel Type, Suspension, Car Model):
-    input_data = np.array([[Year, kms Driven, Fuel Type, Suspension, Car Model]])
+def predict_price(year, kms_driven, fuel_type, suspension, car_model):
+    input_data = preprocessor.transform([[year, kms_driven, fuel_type, suspension, car_model]])
     prediction = lr.predict(input_data)
     return prediction[0]
 
@@ -29,7 +40,7 @@ def main():
     car_model = st.sidebar.selectbox("Car Model", df["Car Model"].unique())
 
     if st.sidebar.button("Predict"):
-        prediction = predict_price(Year, kms Driven, Fuel Type, Suspension, Car Model)
+        prediction = predict_price(Year, kms_driven, fuel_type, suspension, car_model)
         st.write(f"Predicted Price: {prediction:.2f}")
 
 if __name__ == "__main__":
