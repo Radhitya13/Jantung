@@ -26,10 +26,10 @@ def main():
 
     # Define inputs using Streamlit components
     Year = st.sidebar.slider("Year", min_value=1990, max_value=2023, step=1)
-    kms Driven = st.sidebar.slider("Kilometers Driven", min_value=0, max_value=200000, step=1000)
-    Fuel Type = st.sidebar.selectbox("Fuel Type", df["Fuel Type"].unique())
+    kms_Driven = st.sidebar.slider("Kilometers Driven", min_value=0, max_value=200000, step=1000)
+    Fuel_Type = st.sidebar.selectbox("Fuel Type", df["Fuel Type"].unique())
     Suspension = st.sidebar.selectbox("Suspension", df["Suspension"].unique())
-    Car Model = st.sidebar.selectbox("Car Model", df["Car Model"].unique())
+    Car_Model = st.sidebar.selectbox("Car Model", df["Car Model"].unique())
 
     # When the user clicks the predict button
     if st.sidebar.button("Predict"):
